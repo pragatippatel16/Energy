@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Energy Quest | Teacher Dashboard</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body class="teacher-page">
+    <header class="site-header">
+      <nav class="navbar">
+        <a class="brand" href="./index.html">Energy Quest</a>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          Menu
+        </button>
+        <div class="nav-links" id="navLinks">
+          <a href="./index.html">Student Site</a>
+          <a href="#dashboard">Dashboard</a>
+          <a href="#submissions">Submissions</a>
+          <a href="#students">Students Needing Support</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="dashboard">
+      <section class="dashboard-hero">
+        <p class="eyebrow">Teacher Dashboard</p>
+        <h1>Energy Quest Submission Tracker</h1>
+        <p>
+          This page shows student submissions saved on this device. If there is
+          no local data yet, sample data is shown so you can preview the layout.
+        </p>
+        <div class="teacher-actions">
+          <button class="primary-button action-button" id="refreshDashboard" type="button">
+            Refresh Dashboard
+          </button>
+          <a class="secondary-button" href="./index.html">Back to Student Site</a>
+        </div>
+        <p class="dashboard-note" id="localStatus" aria-live="polite"></p>
+      </section>
+
+      <section class="dashboard-grid">
+        <div class="dashboard-stat-grid">
+          <article class="stat-card-dashboard">
+            <p class="eyebrow">Average Score</p>
+            <h2>Class Quiz Performance</h2>
+            <strong id="averageScore">No scores yet</strong>
+          </article>
+
+          <article class="stat-card-dashboard">
+            <p class="eyebrow">Total Entries</p>
+            <h2>Recorded Submissions</h2>
+            <strong id="submissionCount">0 submissions</strong>
+          </article>
+        </div>
+
+        <article class="list-card" id="students">
+          <p class="eyebrow">Students Needing Support</p>
+          <h2>Not Completed Activities</h2>
+          <ul id="incompleteList"></ul>
+        </article>
+      </section>
+
+      <section class="table-card" id="submissions">
+        <p class="eyebrow">Submission Table</p>
+        <h2>Student Work</h2>
+        <table class="dashboard-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Class</th>
+              <th>Quiz Score</th>
+              <th>Activities Completed</th>
+              <th>Timestamp</th>
+            </tr>
+          </thead>
+          <tbody id="teacherTableBody"></tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>
